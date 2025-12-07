@@ -23,6 +23,7 @@ npm -v
 npm i -D playwright
 ````
 
-3. module @playwright/test
+3. browsers 
 ````ps1
+npx playwright install
 ````
