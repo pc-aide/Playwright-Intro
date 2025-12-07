@@ -15,10 +15,14 @@ node -v
 npm -v
 ````
 
-1. Playwright
+2. Playwright
 ````ps1
 # args :
 # -g global
 # -D in your project
 npm i -g playwright
+````
+
+3. module @playwright/test
+````ps1
 ````
