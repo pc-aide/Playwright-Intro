@@ -30,5 +30,6 @@ npx playwright install
 
 ### Test
 ````ps1
+# to stop record, just close the browser
 npx playwright codegen https:rds.ca
 ````
