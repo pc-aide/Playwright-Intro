@@ -20,7 +20,7 @@ npm -v
 # args :
 # -g global
 # -D in your project
-npm i -g playwright
+npm i -D playwright
 ````
 
 3. module @playwright/test
