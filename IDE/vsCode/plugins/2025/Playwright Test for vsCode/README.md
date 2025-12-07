@@ -29,8 +29,15 @@ npx playwright install
 ````
 
 ### Test
+#### Record
 ````ps1
 # to stop record, just close the browser
 # - o --output file name
 npx playwright codegen https:rds.ca - test101.spec.ts
+````
+
+#### checkUp
+````ps1
+# --headed to GUI
+npx playwright test test101.spec.ts --headed
 ````
