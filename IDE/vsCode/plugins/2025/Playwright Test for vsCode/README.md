@@ -29,3 +29,6 @@ npx playwright install
 ````
 
 ### Test
+````ps1
+npx playwright codegen https:rds.ca
+````
