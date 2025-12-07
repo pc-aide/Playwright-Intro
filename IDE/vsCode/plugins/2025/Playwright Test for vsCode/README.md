@@ -17,5 +17,8 @@ npm -v
 
 1. Playwright
 ````ps1
-
+# args :
+# -g global
+# -D in your project
+npm i -g playwright
 ````
