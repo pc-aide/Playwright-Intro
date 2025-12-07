@@ -33,7 +33,7 @@ npx playwright install
 ````ps1
 # to stop record, just close the browser
 # - o --output file name
-npx playwright codegen https:rds.ca - test101.spec.ts
+npx playwright codegen https:rds.ca -o test101.spec.ts
 ````
 
 #### checkUp
