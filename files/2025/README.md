@@ -3,7 +3,7 @@
 ---
 
 ## playwright.config.ts
-````ps1
+````ts
 import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
