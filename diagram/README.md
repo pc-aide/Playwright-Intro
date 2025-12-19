@@ -9,3 +9,8 @@
 
 ## architecture
 <img src="https://i.imgur.com/nl1rDQN.png">
+
+---
+
+## browser expesive & slow vs browserContext
+<img src="https://i.imgur.com/PAyPed1.png">
