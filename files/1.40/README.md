@@ -3,6 +3,7 @@
 ---
 
 ## playwright.config.ts
+### basic
 ````ts
 import { defineConfig, devices } from '@playwright/test';
 
@@ -22,5 +23,32 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
   ],
+});
+````
+
+### pluralsight
+````ts
+import { defineConfig } from '@playwright/test';
+
+export default defineConfig({
+  testDir: './tests',
+
+  fullyParallel: true,
+  reporter: 'html',
+
+  expect: {
+    timeout: 3000
+  },
+
+  use: {
+    baseURL: 'http://localhost:3000',
+
+    screenshot: 'only-on-failure',
+  },
+
+  webServer: {
+    command: 'npm start',
+    url: 'http://localhost:3000',
+  }
 });
 ````
