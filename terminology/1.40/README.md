@@ -10,3 +10,4 @@
 |3|Capable|1. screenshots<br/>2. smart selectors<br/>3. emulation<br/>4. geolocation, local<br/>5. network activity<br/>6. and much more
 |5|languages|1. JavaScript/TypeScript<br/>2. java<br/>3. c#<br/>4. python
 |6|html basic||<img src="https://i.imgur.com/ydBKqaE.png">|
+|7|code|<ins>Dario</ins><br/>In three to six months, AI writing 90% of the code
