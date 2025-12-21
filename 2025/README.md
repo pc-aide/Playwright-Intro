@@ -9,3 +9,11 @@
 npm -v
 node -v
 ````
+
+---
+
+## Install
+````ps1
+# -g general
+npm i -g playwright
+````
