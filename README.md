@@ -28,3 +28,11 @@ npm i -g playwright
 # playwright browsers
 npx playwright install
 ````
+
+---
+
+## test
+````ps1
+# optional : --headed
+npx playwright test test /tests/login.spec.ts --headed
+````
