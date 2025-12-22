@@ -36,6 +36,9 @@ npx playwright install
 npx playwright codegen https:rds.ca -o test101.spec.ts
 ````
 
+#### Testing
+<img src="https://i.imgur.com/oULVLRp.png">
+
 #### checkUp
 ````ps1
 # --headed to GUI
