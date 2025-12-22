@@ -24,4 +24,7 @@ npm init playwright@latest
 ````ps1
 # -g general
 npm i -g playwright
+
+# playwright browsers
+npx playwright install
 ````
