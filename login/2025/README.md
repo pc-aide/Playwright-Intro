@@ -15,3 +15,6 @@ accueil<br/>
 
 <br/>auth.setup.ts<br/>
 <img src="https://i.imgur.com/NdANjbw.png">
+
+<br/>playwright.config.ts<br/>
+<img src="https://i.imgur.com/qi2WybO.png">
