@@ -121,6 +121,13 @@ test('login', async ({ page }) => {
   await page.screenshot({ path: 'inventory.png', fullPage: true });
 
   // storageState
-  await page.context().storageState({ path: '/.auth.json' });
+  await page.context().storageState({ path: 'auth.json' });
 });
+````
+
+---
+
+## test
+````ps1
+npx playwright test --project=setup --headed
 ````
