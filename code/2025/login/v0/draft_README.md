@@ -174,6 +174,13 @@ test('add-to-cart', async ({ page }) => {
 
 
 ## test
+
+### generated auth.json
 ````ps1
 npx playwright test --project=setup --headed
+````
+
+### add-to-cart.spec.ts
+````ps1
+npx playwright test "tests/add-to-cart.spec.ts" --headed
 ````
