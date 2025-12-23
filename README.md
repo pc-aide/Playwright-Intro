@@ -22,11 +22,11 @@ npm init playwright@latest
 
 ## Install
 ````ps1
-# -g general
-npm i -g playwright
-
 # playwright browsers
 npx playwright install
+
+# add node_modules folder
+npm i @playwright/test
 ````
 
 ---
