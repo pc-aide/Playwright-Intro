@@ -195,3 +195,9 @@ npx playwright test --project=setup --headed
 ````ps1
 npx playwright test "tests/add-to-cart.spec.ts" --headed
 ````
+
+
+### report
+````ps1
+npx playwright show-report
+````
