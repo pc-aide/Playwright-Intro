@@ -36,9 +36,27 @@ jobs:
         name: playwright-screenshots
         path: '*.png'
         retention-days: 30
-    - uses: actions/upload-artifact@v4
+    - name: Publish Test Results to Summary
       if: ${{ !cancelled() }}
-      with:
-        name: playwright-traces
-        path: 'test-results/**/*.zip'
-        retention-days: 30
+      run: |
+        echo "# Playwright Test Results" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        
+        if [ -f "test-results/results.json" ]; then
+          PASSED=$(jq '.stats.expected' test-results/results.json)
+          FAILED=$(jq '.stats.unexpected' test-results/results.json)
+          SKIPPED=$(jq '.stats.skipped' test-results/results.json)
+          DURATION=$(jq '.stats.duration' test-results/results.json)
+          
+          echo "## Summary" >> $GITHUB_STEP_SUMMARY
+          echo "| Status | Count |" >> $GITHUB_STEP_SUMMARY
+          echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| ✅ Passed | $PASSED |" >> $GITHUB_STEP_SUMMARY
+          echo "| ❌ Failed | $FAILED |" >> $GITHUB_STEP_SUMMARY
+          echo "| ⏭️ Skipped | $SKIPPED |" >> $GITHUB_STEP_SUMMARY
+          echo "| ⏱️ Duration | ${DURATION}ms |" >> $GITHUB_STEP_SUMMARY
+        else
+          echo "❌ No test results found" >> $GITHUB_STEP_SUMMARY
+        fi
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "📊 [View Full Report](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> $GITHUB_STEP_SUMMARY
