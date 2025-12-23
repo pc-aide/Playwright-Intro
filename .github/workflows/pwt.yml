@@ -15,9 +15,9 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install
     - name: Generate auth.json
-      run: npx playwright test --project=setup --headed
+      run: npx playwright test --project=setup
     - name: Run Playwright tests
-      run: npx playwright test "tests/add-to-cart.spec.ts" --headed
+      run: npx playwright test "tests/add-to-cart.spec.ts"
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
