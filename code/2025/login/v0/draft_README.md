@@ -78,7 +78,7 @@ export default defineConfig({
     /* Test against branded browsers. */
     {
       name: 'Microsoft Edge',
-      use: { ...devices['Desktop Edge'], channel: 'msedge', storageState: 'auth.json' },
+      use: { ...devices['Desktop Edge'], channel: 'msedge', storageState: '.auth.json' },
     },
     // {
     //   name: 'Google Chrome',
