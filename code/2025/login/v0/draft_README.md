@@ -159,7 +159,7 @@ test('login', async ({ page }) => {
 ````ts
 import { test, expect } from '@playwright/test';
 
-test.use({ storageState: 'auth.json' });
+test.use({ storageState: '.auth.json' });
 
 test('add-to-cart', async ({ page }) => {
   await page.goto('/inventory.html');
