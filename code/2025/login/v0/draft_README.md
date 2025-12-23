@@ -3,7 +3,8 @@
 ---
 
 ## playwright.config.ts
-````tsimport { defineConfig, devices } from '@playwright/test';
+````ts
+import { defineConfig, devices } from '@playwright/test';
 
 /**
  * Read environment variables from file.
