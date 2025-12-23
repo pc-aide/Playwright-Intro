@@ -3,8 +3,7 @@
 ---
 
 ## playwright.config.ts
-````ts
-import { defineConfig, devices } from '@playwright/test';
+````tsimport { defineConfig, devices } from '@playwright/test';
 
 /**
  * Read environment variables from file.
@@ -36,10 +35,19 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
+
+    /* Record video on failure */
+    video: 'on',
   },
 
   /* Configure projects for major browsers */
   projects: [
+    {
+      name: 'setup',
+      testMatch: /setup\/.*\.setup\.ts/,
+      use: { ...devices['Desktop Edge'], channel: 'msedge' },
+    },
+
     // {
     //   name: 'chromium',
     //   use: { ...devices['Desktop Chrome'] },
@@ -68,7 +76,8 @@ export default defineConfig({
     /* Test against branded browsers. */
     {
       name: 'Microsoft Edge',
-      use: { ...devices['Desktop Edge'], channel: 'msedge' },
+      use: { ...devices['Desktop Edge'], channel: 'msedge', storageState: 'auth.json' },
+      dependencies: ['setup'],
     },
     // {
     //   name: 'Google Chrome',
@@ -85,12 +94,29 @@ export default defineConfig({
 });
 ````
 
-## login.spec.ts
+## setup/login.setup.ts
 ````ts
+import { test, expect } from '@playwright/test';
+
 test('login', async ({ page }) => {
   await page.goto('/');
 
-  // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Swag Labs/);
+  // username
+  await page.locator('[data-test="username"]').type('standard_user');
+  
+  // password
+  await page.locator('[data-test="password"]').type('secret_sauce');
+  
+  // login button
+  await page.locator('[data-test="login-button"]').click();
+  
+  // wait for redirect to inventory
+  await page.waitForURL('**/inventory.html');
+  
+  // take screenshot
+  await page.screenshot({ path: 'inventory.png', fullPage: true });
+
+  // storageState
+  await page.context().storageState({ path: '/.auth.json' });
 });
 ````
