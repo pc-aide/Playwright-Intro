@@ -36,3 +36,8 @@ jobs:
         name: playwright-screenshots
         path: '*.png'
         retention-days: 30
+    - uses: EnricoMi/publish-unit-test-result-action@v2
+      if: ${{ !cancelled() }}
+      with:
+        files: junit.xml
+        check_name: Playwright Test Results
