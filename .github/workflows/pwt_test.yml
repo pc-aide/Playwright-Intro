@@ -40,4 +40,4 @@ jobs:
       if: ${{ !cancelled() }}
       with:
         files: junit.xml
-        check_name: Playwright Test Results
+        job_summary: true
