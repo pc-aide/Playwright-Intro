@@ -125,7 +125,43 @@ test('login', async ({ page }) => {
 });
 ````
 
+## auth.json
+````json
+{
+  "cookies": [
+    {
+      "name": "session-username",
+      "value": "standard_user",
+      "domain": "www.saucedemo.com",
+      "path": "/",
+      "expires": 1766515437,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://www.saucedemo.com",
+      "localStorage": [
+        {
+          "name": "backtrace-guid",
+          "value": "789263d4-262f-4a20-9b39-119a9ccd97e6"
+        },
+        {
+          "name": "backtrace-last-active",
+          "value": "1766514837500"
+        }
+      ]
+    }
+  ]
+}
+````
+
 ---
+
+
+
 
 ## test
 ````ps1
