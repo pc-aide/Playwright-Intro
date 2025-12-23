@@ -45,7 +45,8 @@ export default defineConfig({
   projects: [
     {
       name: 'setup',
-      testMatch: /setup\/.*\.setup\.ts/,
+      testDir: './setup',
+      testMatch: /.*\.setup\.ts/,
       use: { ...devices['Desktop Edge'], channel: 'msedge' },
     },
 
@@ -77,7 +78,9 @@ export default defineConfig({
     /* Test against branded browsers. */
     {
       name: 'Microsoft Edge',
-      use: { ...devices['Desktop Edge'], channel: 'msedge', storageState: 'auth.json' },
+      use: { ...devices['Desktop Edge'], channel: 'msedge',
+      storageState: 'auth.json' 
+      },
       dependencies: ['setup'],
     },
     // {
