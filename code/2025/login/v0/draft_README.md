@@ -78,10 +78,7 @@ export default defineConfig({
     /* Test against branded browsers. */
     {
       name: 'Microsoft Edge',
-      use: { ...devices['Desktop Edge'], channel: 'msedge',
-      storageState: 'auth.json' 
-      },
-      dependencies: ['setup'],
+      use: { ...devices['Desktop Edge'], channel: 'msedge', storageState: 'auth.json' },
     },
     // {
     //   name: 'Google Chrome',
@@ -134,7 +131,7 @@ test('login', async ({ page }) => {
       "value": "standard_user",
       "domain": "www.saucedemo.com",
       "path": "/",
-      "expires": 1766515437,
+      "expires": 1766518999,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
@@ -146,11 +143,11 @@ test('login', async ({ page }) => {
       "localStorage": [
         {
           "name": "backtrace-guid",
-          "value": "789263d4-262f-4a20-9b39-119a9ccd97e6"
+          "value": "e2ce0ec4-739f-4785-bdb7-2f3118d63e08"
         },
         {
           "name": "backtrace-last-active",
-          "value": "1766514837500"
+          "value": "1766518398608"
         }
       ]
     }
@@ -158,9 +155,22 @@ test('login', async ({ page }) => {
 }
 ````
 
+## tests/add-to-cart.spec.ts
+````ts
+import { test, expect } from '@playwright/test';
+
+test.use({ storageState: 'auth.json' });
+
+test('add-to-cart', async ({ page }) => {
+  await page.goto('/inventory.html');
+  await page.locator('[data-test="add-to-cart-sauce-labs-backpack"]').click();
+  await page.locator('[data-test="shopping-cart-link"]').click();
+  await page.waitForLoadState('networkidle');
+  await page.screenshot({ path: 'cart.png', fullPage: true });
+});
+````
+
 ---
-
-
 
 
 ## test
