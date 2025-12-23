@@ -2,6 +2,17 @@
 
 ---
 
+## .gitignore
+````txt
+# Playwright
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
+````
+
 ## playwright.config.ts
 ````ts
 import { defineConfig, devices } from '@playwright/test';
