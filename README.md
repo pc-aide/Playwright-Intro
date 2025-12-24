@@ -12,14 +12,6 @@ node -v
 
 ---
 
-## init
-````ps1
-npm init playwright@latest
-````
-<img src="https://i.imgur.com/g7kp6rT.png">
-
----
-
 ## Install
 ### codebase
 ````ps1
@@ -46,10 +38,10 @@ sudo apt-get update && sudo apt-get install -y xvfb
 ````ps1
 # optional : --headed
 # generated .auth.json
-user="standard_user" MDP="secret_sauce" xvfb-run -a npx playwright test /setup/login.setup.ts --headed --project=edge
+user="standard_user" MDP="secret_sauce" xvfb-run -a npx playwright test /setup/login.setup.ts --headed --project=chrome
 
 # run only test in tests folder
-user="standard_user" MDP="secret_sauce" xvfb-run -a npx playwright test /tests/ --headed
+xvfb-run -a npx playwright test /tests/ --headed
 
 # report
 npx playwright show-report
