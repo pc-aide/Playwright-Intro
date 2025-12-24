@@ -33,7 +33,7 @@ npm i @playwright/test
 npx playwright install msedge
 
 # process env var
-npm i @type/node
+npm i @types/node
 ````
 
 ---
