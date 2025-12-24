@@ -44,6 +44,11 @@ $env:user = "standard_user"; $env:MDP = "secret_sauce"; `
 # test in tests folder
 # --project=chrome or --project=edge
 npx playwright test tests/add-to-cart.spec.ts --headed --project=chrome
+
+# all-in-one
+ $env:user = "standard_user"; $env:MDP = "secret_sauce"; `
+ npx playwright test setup/login.setup.ts --headed --project=setup-chrome ; `
+ npx playwright test tests/add-to-cart.spec.ts --headed --project=chrome
 ````
 ### codeBase
 ````ps1
