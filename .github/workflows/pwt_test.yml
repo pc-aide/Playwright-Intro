@@ -6,10 +6,12 @@ on:
         description: "Nom d'utilisateur Playwright"
         required: true
         type: string
+        default: standard_user
       MDP:
         description: "Mot de passe Playwright"
         required: true
         type: string
+        default: secret_sauce
 jobs:
   test:
     timeout-minutes: 60
