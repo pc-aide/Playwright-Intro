@@ -9,9 +9,8 @@ on:
         default: standard_user
       MDP:
         description: "MDP"
-        required: true
+        required: false
         type: string
-        default: secret_sauce
       browser:
         description: "Browser"
         required: true
@@ -36,11 +35,11 @@ jobs:
     - name: Generate auth.json
       run: |
         export user="${{ github.event.inputs.user }}"
-        export MDP="${{ github.event.inputs.MDP }}"
+        export MDP="${MDP_VALUE}"
         xvfb-run -a npx playwright test --project=setup-${{ github.event.inputs.browser }} --headed
       env:
         user: ${{ github.event.inputs.user }}
-        MDP: ${{ github.event.inputs.MDP }}
+        MDP_VALUE: ${{ github.event.inputs.MDP || secrets.DEFAULT_MDP }}
     - name: Run Playwright tests
       run: |
         export user="${{ github.event.inputs.user }}"
