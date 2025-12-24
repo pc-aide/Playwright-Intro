@@ -16,17 +16,6 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
-  outputDir: (() => {
-    const now = new Date();
-    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    
-    const hours = String(now.getHours()).padStart(2, '0');
-    const minutes = String(now.getMinutes()).padStart(2, '0');
-    const month = months[now.getMonth()];
-    const year = now.getFullYear();
-    
-    return `test-results/${hours}h${minutes}_${month}_${year}`;
-  })(),
   reporter: [
     ['html', { open: 'never' }],
     ['json', { outputFile: 'test-results/results.json' }],
@@ -37,6 +26,15 @@ export default defineConfig({
       name: 'setup-chrome',
       testDir: './setup',
       testMatch: /.*\.setup\.ts$/,
+      outputDir: (() => {
+        const now = new Date();
+        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const month = months[now.getMonth()];
+        const year = now.getFullYear();
+        return `test-results/setup/${hours}h${minutes}_${month}_${year}`;
+      })(),
       use: {
         ...devices['Desktop Chrome'],
         baseURL: 'https://www.saucedemo.com',
@@ -48,6 +46,15 @@ export default defineConfig({
       name: 'setup-edge',
       testDir: './setup',
       testMatch: /.*\.setup\.ts$/,
+      outputDir: (() => {
+        const now = new Date();
+        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const month = months[now.getMonth()];
+        const year = now.getFullYear();
+        return `test-results/setup/${hours}h${minutes}_${month}_${year}`;
+      })(),
       use: {
         ...devices['Desktop Edge'],
         channel: 'msedge',
@@ -59,6 +66,15 @@ export default defineConfig({
     {
       name: 'chrome',
       testDir: './tests',
+      outputDir: (() => {
+        const now = new Date();
+        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const month = months[now.getMonth()];
+        const year = now.getFullYear();
+        return `test-results/add-to-cart/${hours}h${minutes}_${month}_${year}`;
+      })(),
       use: {
         ...devices['Desktop Chrome'],
         baseURL: 'https://www.saucedemo.com',
@@ -70,6 +86,15 @@ export default defineConfig({
     {
       name: 'edge',
       testDir: './tests',
+      outputDir: (() => {
+        const now = new Date();
+        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const month = months[now.getMonth()];
+        const year = now.getFullYear();
+        return `test-results/add-to-cart/${hours}h${minutes}_${month}_${year}`;
+      })(),
       use: {
         ...devices['Desktop Edge'],
         channel: 'msedge',
