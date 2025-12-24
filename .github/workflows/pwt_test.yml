@@ -3,15 +3,23 @@ on:
   workflow_dispatch:
     inputs:
       user:
-        description: "Nom d'utilisateur Playwright"
+        description: "Utilisateur"
         required: true
         type: string
         default: standard_user
       MDP:
-        description: "Mot de passe Playwright"
+        description: "PWD"
         required: true
         type: string
         default: secret_sauce
+      browser:
+        description: "Browser"
+        required: true
+        type: choice
+        options:
+          - edge
+          - chrome
+        default: edge
 jobs:
   test:
     timeout-minutes: 60
@@ -27,7 +35,7 @@ jobs:
       run: npx playwright install
     - name: Generate auth.json
       run: |
-        user="${{ github.event.inputs.user }}" MDP="${{ github.event.inputs.MDP }}" npx playwright test /setup/login.setup.ts --headed --project=chrome
+        user="${{ github.event.inputs.user }}" MDP="${{ github.event.inputs.MDP }}" npx playwright test /setup/login.setup.ts --headed --project=${{ github.event.inputs.browser }}
     - name: Run Playwright tests
       run: |
         npx playwright test "tests/add-to-cart.spec.ts"
