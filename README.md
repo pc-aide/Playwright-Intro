@@ -38,7 +38,7 @@ sudo apt-get update && sudo apt-get install -y xvfb
 ````ps1
 # optional : --headed
 # generated .auth.json
-user="standard_user" MDP="secret_sauce" xvfb-run -a npx playwright test /setup/login.setup.ts --headed --project=chrome
+user="standard_user" MDP="secret_sauce" xvfb-run -a npx playwright test setup/login.setup.ts --headed --project=setup-chrome
 
 # run only test in tests folder
 xvfb-run -a npx playwright test /tests/ --headed
