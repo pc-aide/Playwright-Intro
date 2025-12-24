@@ -36,6 +36,8 @@ sudo apt-get update && sudo apt-get install -y xvfb
 ## test
 ### Windows
 ````ps1
+# --project=setup-chrome
+# --project=setup-edge
 $env:user = "standard_user"; $env:MDP = "secret_sauce"; npx playwright test setup/login.setup.ts --headed --project=setup-chrome
 ````
 ### codeBase
