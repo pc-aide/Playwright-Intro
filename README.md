@@ -34,6 +34,9 @@ npx playwright install msedge
 
 # process env var
 npm i @types/node
+
+# GUI for headed
+sudo apt-get update && sudo apt-get install -y xvfb
 ````
 
 ---
