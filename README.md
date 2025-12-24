@@ -39,7 +39,10 @@ npm i @types/node
 ---
 
 ## test
+### codeBase
 ````ps1
 # optional : --headed
 npx playwright test test /tests/login.spec.ts --headed
+
+user="user1" MDP="mot" npx playwright test
 ````
