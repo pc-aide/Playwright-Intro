@@ -29,19 +29,16 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install
     - name: Generate auth.json
-      run: |
-        export user="${{ github.event.inputs.user }}"
-        export MDP="${{ secrets.MDP }}"
-        xvfb-run -a npx playwright test --project=setup-${{ github.event.inputs.browser }} --headed
       env:
         user: ${{ github.event.inputs.user }}
+        MDP: ${{ secrets.MDP }}
+      run: |
+        export user="${{ github.event.inputs.user }}"
+        export MDP=$MDP
+        xvfb-run -a npx playwright test --project=setup-${{ github.event.inputs.browser }} --headed
     - name: Run Playwright tests
       run: |
-        export user="${{ github.event.inputs.user }}"
-        export MDP="${{ secrets.MDP }}"
         xvfb-run -a npx playwright test --project=${{ github.event.inputs.browser }} --headed
-      env:
-        user: ${{ github.event.inputs.user }}
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
