@@ -21,12 +21,16 @@ npm init playwright@latest
 ---
 
 ## Install
+### ubuntu
 ````ps1
 # playwright browsers
 npx playwright install
 
 # add node_modules folder
 npm i @playwright/test
+
+# edge
+npx playwright install msedge
 ````
 
 ---
