@@ -30,7 +30,7 @@ jobs:
         user="${{ github.event.inputs.user }}" MDP="${{ github.event.inputs.MDP }}" npx playwright test /setup/login.setup.ts --headed --project=chrome
     - name: Run Playwright tests
       run: |
-        user="${{ github.event.inputs.user }}" MDP="${{ github.event.inputs.MDP }}" npx playwright test "tests/add-to-cart.spec.ts"
+        npx playwright test "tests/add-to-cart.spec.ts"
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
