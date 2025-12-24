@@ -16,8 +16,19 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
+  outputDir: (() => {
+    const now = new Date();
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const month = months[now.getMonth()];
+    const year = now.getFullYear();
+    
+    return `test-results/${hours}h${minutes}_${month}_${year}`;
+  })(),
   reporter: [
-    ['html'],
+    ['html', { open: 'never' }],
     ['json', { outputFile: 'test-results/results.json' }],
   ],
   /* No global use, all in projects */
