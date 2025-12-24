@@ -7,10 +7,6 @@ on:
         required: true
         type: string
         default: standard_user
-      MDP:
-        description: "MDP"
-        required: false
-        type: string
       browser:
         description: "Browser"
         required: true
@@ -42,11 +38,10 @@ jobs:
     - name: Run Playwright tests
       run: |
         export user="${{ github.event.inputs.user }}"
-        export MDP="${{ github.event.inputs.MDP }}"
+        export MDP="${{ secrets.MDP }}"
         xvfb-run -a npx playwright test --project=${{ github.event.inputs.browser }} --headed
       env:
         user: ${{ github.event.inputs.user }}
-        MDP: ${{ github.event.inputs.MDP }}
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
