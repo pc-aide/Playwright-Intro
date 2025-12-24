@@ -54,7 +54,7 @@ jobs:
       if: ${{ !cancelled() }}
       with:
         name: videos
-        path: '*.webm'
+        path: test-results/
         retention-days: 30
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
