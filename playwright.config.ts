@@ -41,16 +41,18 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'setup',
+      name: 'edge',
       testDir: './setup',
       testMatch: /.*\.setup\.ts/,
       use: { ...devices['Desktop Edge'], channel: 'msedge' },
     },
 
-    // {
-    //   name: 'chromium',
-    //   use: { ...devices['Desktop Chrome'] },
-    // },
+    {
+      name: 'chrome',
+      testDir: './setup',
+      testMatch: /.*\.setup\.ts/,
+      use: { ...devices['Desktop Chrome'] },
+    },
 
     // {
     //   name: 'firefox',
@@ -72,11 +74,6 @@ export default defineConfig({
     //   use: { ...devices['iPhone 12'] },
     // },
 
-    /* Test against branded browsers. */
-    {
-      name: 'Microsoft Edge',
-      use: { ...devices['Desktop Edge'], channel: 'msedge', storageState: '.auth.json' },
-    },
     // {
     //   name: 'Google Chrome',
     //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
