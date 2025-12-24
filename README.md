@@ -45,4 +45,7 @@ npm i @types/node
 npx playwright test test /tests/login.spec.ts --headed
 
 user="standard_user" MDP="secret_sauce" npx playwright test
+
+# report
+npx playwright show-report
 ````
