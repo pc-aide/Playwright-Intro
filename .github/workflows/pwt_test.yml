@@ -37,7 +37,7 @@ jobs:
       run: |
         export user="${{ github.event.inputs.user }}"
         export MDP="${{ github.event.inputs.MDP }}"
-        npx playwright test --project=setup-${{ github.event.inputs.browser }} --headed
+        xvfb-run -a npx playwright test --project=setup-${{ github.event.inputs.browser }} --headed
       env:
         user: ${{ github.event.inputs.user }}
         MDP: ${{ github.event.inputs.MDP }}
@@ -45,7 +45,7 @@ jobs:
       run: |
         export user="${{ github.event.inputs.user }}"
         export MDP="${{ github.event.inputs.MDP }}"
-        npx playwright test --project=${{ github.event.inputs.browser }} --headed
+        xvfb-run -a npx playwright test --project=${{ github.event.inputs.browser }} --headed
       env:
         user: ${{ github.event.inputs.user }}
         MDP: ${{ github.event.inputs.MDP }}
