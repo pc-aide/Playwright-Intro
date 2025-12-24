@@ -8,7 +8,7 @@ on:
         type: string
         default: standard_user
       MDP:
-        description: "Mot de passe"
+        description: "MDP"
         required: true
         type: string
         default: secret_sauce
@@ -37,22 +37,18 @@ jobs:
       run: |
         export user="${{ github.event.inputs.user }}"
         export MDP="${{ github.event.inputs.MDP }}"
-        export browser="${{ github.event.inputs.browser }}"
-        npx playwright test --project=setup
+        xvfb-run -a npx playwright test --project=setup-${{ github.event.inputs.browser }} --headed
       env:
         user: ${{ github.event.inputs.user }}
         MDP: ${{ github.event.inputs.MDP }}
-        browser: ${{ github.event.inputs.browser }}
     - name: Run Playwright tests
       run: |
         export user="${{ github.event.inputs.user }}"
         export MDP="${{ github.event.inputs.MDP }}"
-        export browser="${{ github.event.inputs.browser }}"
-        npx playwright test "tests/add-to-cart.spec.ts"
+        xvfb-run -a npx playwright test --project=${{ github.event.inputs.browser }} --headed
       env:
         user: ${{ github.event.inputs.user }}
         MDP: ${{ github.event.inputs.MDP }}
-        browser: ${{ github.event.inputs.browser }}
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
