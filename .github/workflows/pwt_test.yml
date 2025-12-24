@@ -44,19 +44,19 @@ jobs:
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
-        name: playwright-report
+        name: report
         path: playwright-report/
         retention-days: 30
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
-        name: playwright-videos
+        name: videos
         path: test-results/
         retention-days: 30
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
-        name: playwright-screenshots
+        name: screenshots
         path: '*.png'
         retention-days: 30
     - name: Publish Test Results to Summary
