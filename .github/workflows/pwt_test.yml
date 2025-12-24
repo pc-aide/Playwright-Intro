@@ -35,7 +35,7 @@ jobs:
       run: npx playwright install
     - name: Generate auth.json
       run: |
-        user="${{ github.event.inputs.user }}" MDP="${{ github.event.inputs.MDP }}" npx playwright test /setup/login.setup.ts --headed --project=${{ github.event.inputs.browser }}
+        user="${{ github.event.inputs.user }}" MDP="${{ github.event.inputs.MDP }}" xvfb-run -a npx playwright test /setup/login.setup.ts --headed --project=${{ github.event.inputs.browser }}
     - name: Run Playwright tests
       run: |
         npx playwright test "tests/add-to-cart.spec.ts"
