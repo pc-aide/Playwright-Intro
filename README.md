@@ -21,7 +21,7 @@ npm init playwright@latest
 ---
 
 ## Install
-### ubuntu
+### codebase
 ````ps1
 # playwright browsers
 npx playwright install
@@ -31,6 +31,9 @@ npm i @playwright/test
 
 # edge
 npx playwright install msedge
+
+# process env var
+npm i @type/node
 ````
 
 ---
