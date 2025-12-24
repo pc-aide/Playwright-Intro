@@ -12,6 +12,14 @@ on:
         required: true
         type: string
         default: secret_sauce
+      browser:
+        description: "Navigateur à utiliser (chrome ou edge)"
+        required: true
+        type: choice
+        options:
+          - chrome
+          - edge
+        default: chrome
 jobs:
   test:
     timeout-minutes: 60
@@ -29,18 +37,22 @@ jobs:
       run: |
         export user="${{ github.event.inputs.user }}"
         export MDP="${{ github.event.inputs.MDP }}"
+        export browser="${{ github.event.inputs.browser }}"
         npx playwright test --project=setup
       env:
         user: ${{ github.event.inputs.user }}
         MDP: ${{ github.event.inputs.MDP }}
+        browser: ${{ github.event.inputs.browser }}
     - name: Run Playwright tests
       run: |
         export user="${{ github.event.inputs.user }}"
         export MDP="${{ github.event.inputs.MDP }}"
+        export browser="${{ github.event.inputs.browser }}"
         npx playwright test "tests/add-to-cart.spec.ts"
       env:
         user: ${{ github.event.inputs.user }}
         MDP: ${{ github.event.inputs.MDP }}
+        browser: ${{ github.event.inputs.browser }}
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
