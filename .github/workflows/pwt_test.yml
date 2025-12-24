@@ -35,11 +35,10 @@ jobs:
     - name: Generate auth.json
       run: |
         export user="${{ github.event.inputs.user }}"
-        export MDP="${MDP_VALUE}"
+        export MDP="${{ secrets.DEFAULT_MDP }}"
         xvfb-run -a npx playwright test --project=setup-${{ github.event.inputs.browser }} --headed
       env:
         user: ${{ github.event.inputs.user }}
-        MDP_VALUE: ${{ github.event.inputs.MDP || secrets.DEFAULT_MDP }}
     - name: Run Playwright tests
       run: |
         export user="${{ github.event.inputs.user }}"
