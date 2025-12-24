@@ -38,7 +38,8 @@ sudo apt-get update && sudo apt-get install -y xvfb
 ````ps1
 # --project=setup-chrome or --project=setup-edge
 # generated auth.json
-$env:user = "standard_user"; $env:MDP = "secret_sauce"; npx playwright test setup/login.setup.ts --headed --project=setup-chrome
+$env:user = "standard_user"; $env:MDP = "secret_sauce"; `
+ npx playwright test setup/login.setup.ts --headed --project=setup-chrome
 
 # test in tests folder
 # --project=chrome or --project=edge
