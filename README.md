@@ -45,8 +45,10 @@ sudo apt-get update && sudo apt-get install -y xvfb
 ### codeBase
 ````ps1
 # optional : --headed
+# generated .auth.json
 npx playwright test test /tests/login.spec.ts --headed
 
+# run only test in tests folder
 user="standard_user" MDP="secret_sauce" xvfb-run -a npx playwright test /tests/ --headed
 
 # report
