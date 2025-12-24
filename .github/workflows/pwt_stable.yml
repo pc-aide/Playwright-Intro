@@ -1,6 +1,25 @@
-name: Playwright Stable
+name: Playwright Tests Stable
 on:
   workflow_dispatch:
+    inputs:
+      user:
+        description: "Utilisateur"
+        required: true
+        type: string
+        default: standard_user
+      MDP:
+        description: "Mot de passe"
+        required: true
+        type: string
+        default: secret_sauce
+      browser:
+        description: "Browser"
+        required: true
+        type: choice
+        options:
+          - chrome
+          - edge
+        default: chrome
 jobs:
   test:
     timeout-minutes: 60
@@ -15,25 +34,41 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install
     - name: Generate auth.json
-      run: npx playwright test --project=setup
+      run: |
+        export user="${{ github.event.inputs.user }}"
+        export MDP="${{ github.event.inputs.MDP }}"
+        export browser="${{ github.event.inputs.browser }}"
+        npx playwright test --project=setup
+      env:
+        user: ${{ github.event.inputs.user }}
+        MDP: ${{ github.event.inputs.MDP }}
+        browser: ${{ github.event.inputs.browser }}
     - name: Run Playwright tests
-      run: npx playwright test "tests/add-to-cart.spec.ts"
+      run: |
+        export user="${{ github.event.inputs.user }}"
+        export MDP="${{ github.event.inputs.MDP }}"
+        export browser="${{ github.event.inputs.browser }}"
+        npx playwright test "tests/add-to-cart.spec.ts"
+      env:
+        user: ${{ github.event.inputs.user }}
+        MDP: ${{ github.event.inputs.MDP }}
+        browser: ${{ github.event.inputs.browser }}
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
-        name: playwright-report
+        name: report
         path: playwright-report/
         retention-days: 30
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
-        name: playwright-videos
+        name: videos
         path: test-results/
         retention-days: 30
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
-        name: playwright-screenshots
+        name: screenshots
         path: '*.png'
         retention-days: 30
     - name: Publish Test Results to Summary
