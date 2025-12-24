@@ -8,7 +8,7 @@ on:
         type: string
         default: standard_user
       MDP:
-        description: "PWD"
+        description: "MDP"
         required: true
         type: string
         default: secret_sauce
@@ -17,9 +17,9 @@ on:
         required: true
         type: choice
         options:
-          - edge
           - chrome
-        default: edge
+          - edge
+        default: chrome
 jobs:
   test:
     timeout-minutes: 60
@@ -35,10 +35,20 @@ jobs:
       run: npx playwright install
     - name: Generate auth.json
       run: |
-        user="${{ github.event.inputs.user }}" MDP="${{ github.event.inputs.MDP }}" xvfb-run -a npx playwright test /setup/login.setup.ts --headed --project=${{ github.event.inputs.browser }}
+        export user="${{ github.event.inputs.user }}"
+        export MDP="${{ github.event.inputs.MDP }}"
+        npx playwright test --project=setup-${{ github.event.inputs.browser }}
+      env:
+        user: ${{ github.event.inputs.user }}
+        MDP: ${{ github.event.inputs.MDP }}
     - name: Run Playwright tests
       run: |
-        npx playwright test "tests/add-to-cart.spec.ts"
+        export user="${{ github.event.inputs.user }}"
+        export MDP="${{ github.event.inputs.MDP }}"
+        npx playwright test --project=${{ github.event.inputs.browser }}
+      env:
+        user: ${{ github.event.inputs.user }}
+        MDP: ${{ github.event.inputs.MDP }}
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
