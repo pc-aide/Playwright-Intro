@@ -46,7 +46,7 @@ sudo apt-get update && sudo apt-get install -y xvfb
 ````ps1
 # optional : --headed
 # generated .auth.json
-npx playwright test test /setup/login.setup.ts --headed
+user="standard_user" MDP="secret_sauce" xvfb-run -a npx playwright test /setup/login.setup.ts --headed --project=edge
 
 # run only test in tests folder
 user="standard_user" MDP="secret_sauce" xvfb-run -a npx playwright test /tests/ --headed
