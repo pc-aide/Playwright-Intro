@@ -1,4 +1,4 @@
-name: Playwright Tests
+name: Playwright Tests Stable
 on:
   workflow_dispatch:
     inputs:
@@ -7,6 +7,11 @@ on:
         required: true
         type: string
         default: standard_user
+      MDP:
+        description: "MDP"
+        required: true
+        type: string
+        default: secret_sauce
       browser:
         description: "Browser"
         required: true
@@ -29,16 +34,14 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install
     - name: Generate auth.json
-      env:
-        user: ${{ github.event.inputs.user }}
-        MDP: ${{ secrets.MDP }}
-      continue-on-error: true
       run: |
         export user="${{ github.event.inputs.user }}"
-        export MDP=$MDP
+        export MDP="${{ github.event.inputs.MDP }}"
         xvfb-run -a npx playwright test --project=setup-${{ github.event.inputs.browser }} --headed
+      env:
+        user: ${{ github.event.inputs.user }}
+        MDP: ${{ github.event.inputs.MDP }}
     - name: Run Playwright tests
-      continue-on-error: true
       run: |
         xvfb-run -a npx playwright test --project=${{ github.event.inputs.browser }} --headed
     - uses: actions/upload-artifact@v4
@@ -48,7 +51,7 @@ jobs:
         path: playwright-report/
         retention-days: 30
     - uses: actions/upload-artifact@v4
-      if: ${{ always() }}
+      if: ${{ !cancelled() }}
       with:
         name: videos
         path: test-results/
