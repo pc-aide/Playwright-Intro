@@ -44,5 +44,5 @@ npm i @types/node
 # optional : --headed
 npx playwright test test /tests/login.spec.ts --headed
 
-user="user1" MDP="mot" npx playwright test
+user="standard_user" MDP="secret_sauce" npx playwright test
 ````
