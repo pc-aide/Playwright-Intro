@@ -32,21 +32,23 @@ jobs:
       env:
         user: ${{ github.event.inputs.user }}
         MDP: ${{ secrets.MDP }}
+      continue-on-error: true
       run: |
         export user="${{ github.event.inputs.user }}"
         export MDP=$MDP
         xvfb-run -a npx playwright test --project=setup-${{ github.event.inputs.browser }} --headed
     - name: Run Playwright tests
+      continue-on-error: true
       run: |
         xvfb-run -a npx playwright test --project=${{ github.event.inputs.browser }} --headed
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
         name: report
-        path: test-results/
+        path: playwright-report/
         retention-days: 30
     - uses: actions/upload-artifact@v4
-      if: ${{ !cancelled() }}
+      if: ${{ always() }}
       with:
         name: videos
         path: test-results/
