@@ -47,7 +47,7 @@ sudo apt-get update && sudo apt-get install -y xvfb
 # optional : --headed
 npx playwright test test /tests/login.spec.ts --headed
 
-user="standard_user" MDP="secret_sauce" xvfb-run -a npx playwright test --headed
+user="standard_user" MDP="secret_sauce" xvfb-run -a npx playwright test /tests/ --headed
 
 # report
 npx playwright show-report
