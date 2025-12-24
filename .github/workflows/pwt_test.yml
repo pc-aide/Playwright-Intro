@@ -3,17 +3,17 @@ on:
   workflow_dispatch:
     inputs:
       user:
-        description: "Nom d'utilisateur Playwright"
+        description: "Utilisateur"
         required: true
         type: string
         default: standard_user
       MDP:
-        description: "Mot de passe Playwright"
+        description: "Mot de passe"
         required: true
         type: string
         default: secret_sauce
       browser:
-        description: "Navigateur à utiliser (chrome ou edge)"
+        description: "Browser"
         required: true
         type: choice
         options:
