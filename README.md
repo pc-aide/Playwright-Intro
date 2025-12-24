@@ -41,7 +41,7 @@ sudo apt-get update && sudo apt-get install -y xvfb
 user="standard_user" MDP="secret_sauce" xvfb-run -a npx playwright test setup/login.setup.ts --headed --project=setup-chrome
 
 # run only test in tests folder
-xvfb-run -a npx playwright test /tests/ --headed
+xvfb-run -a npx playwright test /tests/ --headed --project=chrome
 
 # report
 npx playwright show-report
