@@ -9,3 +9,8 @@ console.log("home page title:", title);
 // my account title
 await expect(title).toEqual('My Account');
 ````
+
+## url
+````ts
+await expect(page).toHaveURL(/\/account/);
+````
