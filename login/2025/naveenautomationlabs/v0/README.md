@@ -115,7 +115,7 @@ export default defineConfig({
 ````ts
 import { test, expect } from '@playwright/test';
 
-test('login test', async ({ page }) => {
+test('login', async ({ page }) => {
 
   await page.goto('https://naveenautomationlabs.com/opencart/index.php?route=account/login');
 
@@ -123,14 +123,25 @@ test('login test', async ({ page }) => {
   const password = await page.locator('[name="password"]');
   const loginButton = await page.locator('input[value="Login"]');
 
-  await emailId.fill("naveen@gmail.com");
+  await emailId.fill("uqd06520@laoia.com");
   await password.fill("naveen@123");
-  await loginButton.click();
+  
+  // Wait for navigation after login button click
+  await Promise.all([
+    page.waitForNavigation({ waitUntil: 'networkidle' }),
+    loginButton.click()
+  ]);
 
   const title = await page.title();
   console.log(title);
 
-  await page.screenshot({ path: `example.png` });
+  // account page
+  await expect(page).toHaveURL(/\/account/);
+
+  await page.screenshot({ path: `account.png` });
+
+  // storageState save
+  await page.context().storageState({ path: '.auth.json' });
 
 });
 ````
