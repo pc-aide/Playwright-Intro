@@ -138,7 +138,7 @@ test('login', async ({ page }) => {
   // account page
   await expect(page).toHaveURL(/\/account/);
 
-  await page.screenshot({ path: `account.png` });
+  await page.screenshot({ path: 'account.png' });
 
   // storageState save
   await page.context().storageState({ path: '.auth.json' });
