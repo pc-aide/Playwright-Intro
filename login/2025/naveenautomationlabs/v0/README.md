@@ -155,3 +155,11 @@ test('login test', async ({ page }) => {
 ````ps1
 npx playwright test setup/login.setup.ts --project=edge --headed
 ````
+
+---
+
+## debug
+### windows
+````ps1
+npx playwright test tests/add-to-cart.spec.ts --project=edge --ui
+````
