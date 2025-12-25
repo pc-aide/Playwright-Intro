@@ -1,14 +1,5 @@
 # naveenautomationlabs
 
----
-
-## Install
-````ps1
-
-````
-
----
-
 ## optional - default mytests/login.spec.ts
 ````ts
 const { webkit, firefox, chromium } = require('playwright');
@@ -37,8 +28,6 @@ test('login test', async () => {
   // await browser.close();
 });
 ````
-
----
 
 ## playwright.config.ts
 ````ts
@@ -121,8 +110,6 @@ export default defineConfig({
   // },
 });
 ````
-
----
 
 ## setup/login.setup.ts
 ````ts
