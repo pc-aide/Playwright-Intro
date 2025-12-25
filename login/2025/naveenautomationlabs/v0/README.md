@@ -148,7 +148,24 @@ test('login test', async ({ page }) => {
 });
 ````
 
----
+## tests/add-to-cart.spec.ts
+````ts
+import { test, expect } from '@playwright/test';
+
+test.use({ storageState: './setup/.auth.json' });
+
+test('add-to-cart', async ({ page }) => {
+  await page.goto('https://naveenautomationlabs.com/opencart/index.php?route=product/category&path=20');
+  
+  // onglet desktop
+  await page.locator('#menu').getByRole('link', { name: 'Desktops', exact: true }).click();
+  await page.getByRole('link', { name: 'Show All Desktops' }).click();
+  // add to cart
+  await page.getByRole('button', { name: ' Add to Cart' }).first().click();
+  await page.getByRole('button', { name: ' 1 item(s) - $' }).click();
+  await page.getByRole('link', { name: ' View Cart' }).click();
+});
+````
 
 ## test
 ### Windows
