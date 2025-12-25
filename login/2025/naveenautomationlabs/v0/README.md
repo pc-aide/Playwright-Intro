@@ -133,7 +133,7 @@ test('login', async ({ page }) => {
   ]);
 
   const title = await page.title();
-  console.log(title);
+  console.log("home page title:", title);
 
   // account page
   await expect(page).toHaveURL(/\/account/);
