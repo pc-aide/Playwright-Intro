@@ -135,11 +135,12 @@ test('login', async ({ page }) => {
   const title = await page.title();
   console.log("home page title:", title);
 
-  // account page
+  // account page url
   await expect(page).toHaveURL(/\/account/);
-
+  // my account title
+  await expect(title).toEqual('My Account');
+  // screenshot
   await page.screenshot({ path: 'account.png' });
-
   // storageState save
   await page.context().storageState({ path: '.auth.json' });
 
