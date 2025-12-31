@@ -54,3 +54,5 @@ export default defineConfig({
 ````
 <img src="https://i.imgur.com/1xQ4ffI.png">
 
+* Preview html
+<img src="https://i.imgur.com/v9Sy8k3.png">
