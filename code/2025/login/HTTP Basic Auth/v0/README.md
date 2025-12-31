@@ -37,5 +37,5 @@ GET https://the-internet.herokuapp.com/basic_auth with auth type basic auth
 
 * base64<br/>
 <img src="https://i.imgur.com/bNw0zo3.png">
-* console btoa modeDev Chrome<br/>
+* btoa method - modeDev Browser<br/>
 <img src="https://i.imgur.com/iJC65X0.png">
