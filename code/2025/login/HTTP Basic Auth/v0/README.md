@@ -14,6 +14,11 @@ test('auth test', async()=>{
   const context: BrowserContext = await browser.newContext();
   const page: Page = await context.newPage();
 
+  const username = 'admin';
+  const password = 'admin';
+  // method js
+  const authHeader = 'basic ' + btoa(username+':'+password);
+  page.setExtraHTTPHeaders({Authorization : authHeader});
 
   await page.goto('https://the-internet.herokuapp.com/basic_auth');
   // await page.goto('https://admin:admin@the-internet.herokuapp.com/basic_auth');
