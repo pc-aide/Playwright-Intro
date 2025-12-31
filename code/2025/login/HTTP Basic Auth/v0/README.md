@@ -16,7 +16,7 @@ test('auth test', async()=>{
 
 
   await page.goto('https://the-internet.herokuapp.com/basic_auth');
-
+  // await page.goto('https://admin:admin@the-internet.herokuapp.com/basic_auth');
 
 
 
