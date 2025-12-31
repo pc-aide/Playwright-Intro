@@ -1,61 +1,34 @@
-# Locators
+# Locator 
 
-Playwright provides **around 14 main locator types**, organized into **three categories**.
+1. ID Selector: Selects elements based on their id attribute.
+   `const element = page.locator('id=my-button');`
+2. Class Name Selector: Selects elements based on their class name.
+   `const element = page.locator('.submit-button');`
+3. Text Selector: Selects elements that contain specific text.
+   `const element = page.locator('text=Submit');`
+4. CSS Selector: Selects elements based on their CSS properties.
+   `const element = page.locator('css=button#id');`
+5. XPath Selector: Selects elements based on the XPath query.
+   `const element page. locator('xpath=//button');`
 
----
+<br/>
 
-## 1. Semantic (User-Oriented) Locators — 7
+6. Data-test-id Selector: Selects elements by a custom attribute (data-testid), commonly used in testing.
+7. Role Selector: Selects elements by their ARIA role.
 
-These locators are **recommended** because they interact with the page like a real user would.
+<br/>
 
-| Locator | Purpose |
-|--------|--------|
-| `getByRole()` | Find elements by ARIA role |
-| `getByLabel()` | Find form fields linked to `<label>` |
-| `getByPlaceholder()` | Find by placeholder text |
-| `getByText()` | Find by visible text |
-| `getByTitle()` | Find by `title` attribute |
-| `getByAltText()` | Find images by alt text |
-| `getByTestId()` | Find by `data-testid` attribute |
+8. Combining Selectors: Allows combining multiple selectors for more specific targeting.
+9. Chaining Selectors: Enables chaining of multiple selectors to refine the selection.
+10. Frame Locators: For interacting with elements inside iframes.
+11. Attribute Selector: Selects elements based on any attribute.
+12. nth-match Selector: Selects a specific instance of an element among multiple matches.
 
----
+<br/>
 
-## 2. DOM / Technical Locators — 7
-
-These locators target the HTML structure directly.
-
-| Locator | Purpose |
-|--------|--------|
-| `locator(css)` | CSS selector |
-| `locator(xpath)` | XPath selector |
-| `getById()` | Find by HTML `id` |
-| `frameLocator()` | Locate elements inside iframes |
-| `filter()` | Advanced locator filtering |
-| `nth()` | Select by index |
-| `first()` / `last()` | Select first or last match |
-
----
-
-## 3. Locator Modifiers (Compositional)
-
-These methods refine or combine locators.
-
-| Method | Purpose |
-|------|--------|
-| `has()` | Must contain another locator |
-| `hasText()` | Must contain specific text |
-| `and()` | Intersection of locators |
-| `or()` | Union of locators |
-
----
-
-## Summary
-
-| Category | Count |
-|--------|------|
-| Semantic locators | 7 |
-| DOM/Technical locators | 7 |
-| Modifiers | 4+ |
-| **Total main locator types** | **≈ 14** |
-
-> Playwright recommends using semantic locators first to build more stable, maintainable, and user-like tests.
+13. SVG Selectors:
+    * Direct Selector
+    * Piercing Shadow DOM.
+14. Shadow DOM Selectors:
+    * Direct Selector
+    * Piercing Shadow DOM
