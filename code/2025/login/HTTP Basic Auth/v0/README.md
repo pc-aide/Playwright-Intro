@@ -28,5 +28,10 @@ test('auth test', async()=>{
 ## login pass
 <img src="https://i.imgur.com/2yrIEPZ.png">
 
-## GET https://the-internet.herokuapp.com/basic_auth with auth type basic auth
+## API
+````api
+// base64
+GET https://the-internet.herokuapp.com/basic_auth with auth type basic auth
+````
+
 <img src="https://i.imgur.com/9EXNWPD.png">
