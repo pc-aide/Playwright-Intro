@@ -15,7 +15,7 @@ test('auth test', async()=>{
   const page: Page = await context.newPage();
 
 
-  await page.goto('http://the-internet.herokuapp.com/basic_auth');
+  await page.goto('https://the-internet.herokuapp.com/basic_auth');
 
 
 
