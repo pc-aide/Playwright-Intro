@@ -42,3 +42,4 @@ test('locator test', async() => {
 
 });
 ````
+<img src="https://i.imgur.com/4co0XPM.png">
