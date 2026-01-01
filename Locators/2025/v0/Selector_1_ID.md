@@ -90,7 +90,8 @@ import { webkit, chromium, firefox } from 'playwright'
 
 test('locator test', async() => {
 
-    const browser: Browser = await chromium.launch({ headless: false, channel: 'chrome' });
+    const browser: Browser = await chromium.
+    launch({ headless: false, channel: 'chrome' }); // msedge, chrome
     const page: Page = await browser.newPage();
     await page.goto("https://naveenautomationlabs.com/opencart/index.php?route=account/register");
 
