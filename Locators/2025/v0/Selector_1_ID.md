@@ -99,9 +99,11 @@ test('locator test', async() => {
     const firstName:Locator = page.locator('id=input-firstname');
     const lastName:Locator = page.locator('id=input-lastname');
 
-    // 2 action on it
+    // action on it
     await firstName.fill("Kurt");
     await lastName.fill("Warner");
+
+    // 2 class name
 
     // pause debugging
     await page.pause();
