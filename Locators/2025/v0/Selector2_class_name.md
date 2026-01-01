@@ -116,3 +116,4 @@ export default defineConfig({
   // },
 });
 ````
+<img src="https://github.com/pc-aide/Playwright-Intro/blob/main/Locators/2025/v0/selector2_class_name.png?raw=true">
