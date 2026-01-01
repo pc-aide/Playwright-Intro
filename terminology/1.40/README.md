@@ -11,3 +11,5 @@
 |5|languages|1. JavaScript/TypeScript<br/>2. java<br/>3. c#<br/>4. python
 |6|html basic||<img src="https://i.imgur.com/ydBKqaE.png">|
 |7|code|<ins>Dario Amodei Anthrop\C</ins><br/>In three to six months, AI writing 90% of the code<br/><br/><ins>Sam Altman</ins><br/>AI will make coders 10x more productive, not replace them<br/><br/>Playwright e2e tests?
+|8|xPath|
+|9|CSS Selector|
