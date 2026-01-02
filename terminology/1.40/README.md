@@ -13,3 +13,4 @@
 |7|code|<ins>Dario Amodei Anthrop\C</ins><br/>In three to six months, AI writing 90% of the code<br/><br/><ins>Sam Altman</ins><br/>AI will make coders 10x more productive, not replace them<br/><br/>Playwright e2e tests?
 |8|xPath|
 |9|CSS Selector|
+|10|The limitations of manual testing are as follows|1. <ins>Time-consuming:</ins><br/>Manual testing can be time-consuming, especially when testing extensive and repetitive scenarios.<br/><br/>2. <ins>Human error:</ins><br/>Human testers can make mistakes during test execution, leading to inconsistent results.<br/><br/>3. <ins>Resource-intensive:</ins><br/>Manual testing requires skilled testers, which can be resource-intensive in terms of training and compensation<br/><br/>4. <ins>Limited scalability:</ins><br/>It can be challenging to scale manual testing to handle large-scale projects or continuous integration processes.|
