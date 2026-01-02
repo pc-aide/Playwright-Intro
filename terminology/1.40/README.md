@@ -17,3 +17,4 @@
 |11|Katalon Studio|
 |12|[TestComplete](https://smartbear.com/product/testcomplete/)||demo - automation on calculatrice windows - no code<br/><img src="https://i.imgur.com/md8ZA7Y.png">|
 |13|Appium|An open-source tool for <ins>automating mobile apps</ins>. it works with various platforms, including Windows Phone, <ins>iOS, & Android</ins>.Different operations like typing text, clicking buttons, & scrolling through lists can be easily automated with Appium|
+|14|Framework-based testing tools|eg : <ins>Robot Framework</ins><br/>have some disadvantages:<br/>1. <ins>inital setup & learning curve</ins><br/>
