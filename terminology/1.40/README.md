@@ -24,4 +24,4 @@
 |18|Mabl|Mabl i san intelligent test automation platform that uses machine learning to autoate functional & regression testing for web apps.
 |functionize|Functionize provides an AI-powered testing platform for software apps
 |19|testsigma|<ins>free/limit</ins><br/>1. 200 min / month (local + CI)
-|20|testRigor|
+|20|testRigor|testRigor is a generateive AI based test automation tool that helps QA teams automate their testing processes. it is designed to be easy to use, even for those with no prior experience in test automation. testRigor uses NLP to convert plan English test specifications into executable code. This means that you can write your tests in a way that is easy to understand, even for no-technical users
