@@ -5,3 +5,7 @@
 
 ## findOut chrome devMod
 <img src="https://i.imgur.com/DBIbeiC.png">
+* Combinated
+<img src="https://i.imgur.com/Z1VYsbC.png">
+
+## 
