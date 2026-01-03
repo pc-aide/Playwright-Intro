@@ -48,9 +48,12 @@ test('locator test', async() => {
     console.log("forgotPwdLinkExist :" + forgotPwdLinkExist);
 
     // 4 CSS
-    const email:Locator = page.locator('css=input#input-email');
-    const telephone:Locator = page.locator('css=input[name="telephone"]');
-    const privacyCheckbox:Locator = page.locator('css=input[type="checkbox"]');
+    // const email:Locator = page.locator('css=input#input-email'); // css= not mandatory
+    // const telephone:Locator = page.locator('css=input[name="telephone"]');
+    // const privacyCheckbox:Locator = page.locator('css=input[type="checkbox"]');
+    const email:Locator = page.locator('input#input-email'); // css= not mandatory
+    const telephone:Locator = page.locator('input[name="telephone"]');
+    const privacyCheckbox:Locator = page.locator('input[type="checkbox"]');
 
     await email.fill("kurt@gmail.com");
     await telephone.fill("1234567890");
