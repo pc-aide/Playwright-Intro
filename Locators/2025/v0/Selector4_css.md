@@ -144,3 +144,5 @@ export default defineConfig({
   // },
 });
 ````
+
+<img src="https://i.imgur.com/C6sHq2J.png">
