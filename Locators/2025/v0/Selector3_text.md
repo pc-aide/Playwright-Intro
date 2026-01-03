@@ -34,7 +34,15 @@ test('locator test', async() => {
     // 3 text
     const header:Locator = page.locator('text=Register Account');
     const headerExist = await header.isEnabled();
-    console.log(headerExist);
+    console.log("header1Exist :" + headerExist);
+
+    const ContinueBtn:Locator = page.locator('text=Continue');
+    const BtnExist = await ContinueBtn.isEnabled();
+    console.log("ContinueBtnExist :" + BtnExist);
+
+    const forgotPwdLink:Locator = page.locator('text=Forgotten Password');
+    const forgotPwdLinkExist = await forgotPwdLink.isEnabled();
+    console.log("forgotPwdLinkExist :" + forgotPwdLinkExist);
 
     // pause debugging
     await new Promise(() => {});
