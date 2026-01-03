@@ -63,8 +63,10 @@ test('locator test', async() => {
     await privacyCheckbox.click();
 
     // 5 XPath
-    const password:Locator = page.locator('xpath=//input[@id="input-password"]');
-    const search:Locator = page.locator('xpath=//input[@name="search" and @type="text"]');
+    // const password:Locator = page.locator('xpath=//input[@id="input-password"]'); // xpath= not mandatory
+    // const search:Locator = page.locator('xpath=//input[@name="search" and @type="text"]');
+    const password:Locator = page.locator('//input[@id="input-password"]'); // xpath= not mandatory
+    const search:Locator = page.locator('//input[@name="search" and @type="text"]');
 
     await password.fill("test123#");
     await search.fill("macbook");
