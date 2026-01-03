@@ -138,4 +138,4 @@ export default defineConfig({
 npx playwright test
 ````
 
-<img src="https://i.imgur.com/vHGHB7b.png">
+<img src="https://i.imgur.com/EoLSYKU.png">
