@@ -120,6 +120,7 @@ body {
     font-size: 1em;
     letter-spacing: 0.05em;
     z-index: 10;
+    position: relative;
 }
 
 .inputBox span {
