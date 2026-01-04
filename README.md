@@ -15,11 +15,11 @@ node -v
 ## Install
 ### codebase
 ````ps1
-# playwright browsers
-npx playwright install
-
 # add node_modules folder
 npm i @playwright/test
+
+# playwright browsers
+npx playwright install
 
 # edge
 npx playwright install msedge
