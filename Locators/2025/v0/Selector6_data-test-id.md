@@ -288,5 +288,5 @@ test('locator test', async() => {
 
 ## test
 ````sh
-
+npx playwright test ./tests/selecto6.spec.ts
 ````
