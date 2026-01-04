@@ -174,4 +174,4 @@ input[type="submit"]:active {
 ````
 
 * preview web
-<img src="https://i.imgur.com/BDu3HDs.png">
+<img src="https://i.imgur.com/q5xUwNW.png">
