@@ -259,7 +259,7 @@ export default defineConfig({
 });
 ````
 
-## tests/loctor6.spec.ts
+## tests/locator6.spec.ts
 ````ts
 import { test, expect, Browser, Page, Locator } from '@playwright/test'
 import {log} from 'console';
