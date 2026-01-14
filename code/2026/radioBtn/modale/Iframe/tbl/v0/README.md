@@ -15,3 +15,8 @@ test('internal transfer', async ({ page }) => {
   await page.pause();
 });
 ````
+
+## test
+````sh
+npx playwright test --project=chrome --headed tests/internal_transfer.spec.ts
+````
