@@ -29,6 +29,8 @@ jobs:
     container:
       image: mcr.microsoft.com/playwright:v1.57.0-jammy
     steps:
+    - name: Install jq
+      run: apt-get update && apt-get install -y jq
     - name: Checkout Playwright-Intro (config)
       uses: actions/checkout@v4
       with:
