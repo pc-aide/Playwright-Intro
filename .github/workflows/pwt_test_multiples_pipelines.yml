@@ -26,6 +26,8 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.57.0-jammy
     steps:
     - name: Checkout Playwright-Intro (config)
       uses: actions/checkout@v4
@@ -40,9 +42,6 @@ jobs:
       run: cp Playwright-Intro/playwright.config.ts playwright-tests-repo/
     - name: Install dependencies
       run: npm i @playwright/test
-      working-directory: playwright-tests-repo
-    - name: Install Playwright Browsers
-      run: npx playwright install
       working-directory: playwright-tests-repo
     - name: Generate auth.json
       run: |
