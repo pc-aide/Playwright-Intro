@@ -34,8 +34,7 @@ jobs:
     - name: Checkout playwright-tests-repo (tests)
       uses: actions/checkout@v4
       with:
-        repository: ${{ secrets.PLAYWRIGHT_TESTS_REPO }}
-        token: ${{ secrets.PLAYWRIGHT_TESTS_REPO_TOKEN }}
+        repository: pc-aide/playwright-tests-repo
         path: playwright-tests-repo
     - name: Copy Playwright config to tests repo
       run: cp Playwright-Intro/playwright.config.ts playwright-tests-repo/
