@@ -43,7 +43,7 @@ jobs:
     - name: Copy Playwright config to tests repo
       run: cp Playwright-Intro/playwright.config.ts playwright-tests-repo/
     - name: Install dependencies
-      run: npm i @playwright/test
+      run: npm i @playwright/test@1.57.0
       working-directory: playwright-tests-repo
     - name: Generate auth.json
       run: |
