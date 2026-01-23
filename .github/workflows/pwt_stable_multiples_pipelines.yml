@@ -1,0 +1,106 @@
+name: Playwright stable (External Repo)
+
+on:
+  workflow_dispatch:
+    inputs:
+      user:
+        description: "Utilisateur"
+        required: true
+        type: string
+        default: standard_user
+      MDP:
+        description: "MDP"
+        required: true
+        type: string
+        default: secret_sauce
+      browser:
+        description: "Browser"
+        required: true
+        type: choice
+        options:
+          - chrome
+          - edge
+        default: chrome
+
+jobs:
+  test:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.57.0-jammy
+    steps:
+    - name: Install jq
+      run: apt-get update && apt-get install -y jq
+    - name: Checkout Playwright-Intro (config)
+      uses: actions/checkout@v4
+      with:
+        path: Playwright-Intro
+    - name: Checkout playwright-tests-repo (tests)
+      uses: actions/checkout@v4
+      with:
+        repository: pc-aide/playwright-tests-repo
+        path: playwright-tests-repo
+    - name: Copy Playwright config to tests repo
+      run: cp Playwright-Intro/playwright.config.ts playwright-tests-repo/
+    - name: Install dependencies
+      run: npm i @playwright/test
+      working-directory: playwright-tests-repo
+    - name: Generate auth.json
+      run: |
+        export user="${{ github.event.inputs.user }}"
+        export MDP="${{ github.event.inputs.MDP }}"
+        xvfb-run -a npx playwright test setup --project=setup-${{ github.event.inputs.browser }} --headed
+      env:
+        user: ${{ github.event.inputs.user }}
+        MDP: ${{ github.event.inputs.MDP }}
+      working-directory: playwright-tests-repo
+    - name: Run Playwright tests
+      run: |
+        export user="${{ github.event.inputs.user }}"
+        export MDP="${{ github.event.inputs.MDP }}"
+        xvfb-run -a npx playwright test tests --project=${{ github.event.inputs.browser }} --headed
+      env:
+        user: ${{ github.event.inputs.user }}
+        MDP: ${{ github.event.inputs.MDP }}
+      working-directory: playwright-tests-repo
+    - uses: actions/upload-artifact@v4
+      if: ${{ !cancelled() }}
+      with:
+        name: report
+        path: playwright-tests-repo/playwright-report/
+        retention-days: 30
+    - uses: actions/upload-artifact@v4
+      if: ${{ !cancelled() }}
+      with:
+        name: videos
+        path: playwright-tests-repo/test-results/
+        retention-days: 30
+    - uses: actions/upload-artifact@v4
+      if: ${{ !cancelled() }}
+      with:
+        name: screenshots
+        path: 'playwright-tests-repo/*.png'
+        retention-days: 30
+    - name: Publish Test Results to Summary
+      if: ${{ !cancelled() }}
+      run: |
+        echo "# Playwright Test Results" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        if [ -f "playwright-tests-repo/test-results/results.json" ]; then
+          PASSED=$(jq '.stats.expected' playwright-tests-repo/test-results/results.json)
+          FAILED=$(jq '.stats.unexpected' playwright-tests-repo/test-results/results.json)
+          SKIPPED=$(jq '.stats.skipped' playwright-tests-repo/test-results/results.json)
+          DURATION=$(jq '.stats.duration' playwright-tests-repo/test-results/results.json)
+          FORMATTED_DURATION=$(awk "BEGIN {sec=$DURATION/1000; m=int(sec/60); s=sec%60; if(m>0) printf \"%dm %.2fs\", m, s; else printf \"%.2fs\", s}")
+          echo "## Summary" >> $GITHUB_STEP_SUMMARY
+          echo "| Status | Count |" >> $GITHUB_STEP_SUMMARY
+          echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| ✅ Passed | $PASSED |" >> $GITHUB_STEP_SUMMARY
+          echo "| ❌ Failed | $FAILED |" >> $GITHUB_STEP_SUMMARY
+          echo "| ⏭️ Skipped | $SKIPPED |" >> $GITHUB_STEP_SUMMARY
+          echo "| ⏱️ Duration | $FORMATTED_DURATION |" >> $GITHUB_STEP_SUMMARY
+        else
+          echo "❌ No test results found" >> $GITHUB_STEP_SUMMARY
+        fi
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "📊 [View Full Report](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> $GITHUB_STEP_SUMMARY
