@@ -67,7 +67,6 @@ export default defineConfig({
       use: {
         ...devices['Desktop Chrome'],
         baseURL: 'https://www.saucedemo.com',
-        storageState: 'setup/.auth.json',
         trace: 'on-first-retry',
         video: 'on',
       },
@@ -88,7 +87,6 @@ export default defineConfig({
         ...devices['Desktop Edge'],
         channel: 'msedge',
         baseURL: 'https://www.saucedemo.com',
-        storageState: 'setup/.auth.json',
         trace: 'on-first-retry',
         video: 'on',
       },
