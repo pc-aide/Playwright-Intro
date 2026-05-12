@@ -2,6 +2,9 @@
 
 * A **Model Context Protocol** server that provides browser automation capabilities using Playwright. Enables LLMs to interact with web pages through structured accessibility snapshots — no vision models required.
 
+## ref
+1. https://playwright.dev/mcp/introduction
+
 ## Example
 
 ````txt
