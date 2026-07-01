@@ -5,3 +5,6 @@
 
 ## Role selector
 * Role selector : selects elements by their ARIA role
+
+## chaining locators
+<img src="https://i.imgur.com/PwiuiVt.png">
