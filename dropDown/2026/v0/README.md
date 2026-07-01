@@ -9,3 +9,5 @@
 <img src="https://i.imgur.com/ApiDKrI.png">
 * log length : <br/>
 <img src="https://i.imgur.com/ONVtiJk.png">
+* find selector via mode - dev browser : <br/>
+<img src="https://i.imgur.com/4eU5EQK.png">
