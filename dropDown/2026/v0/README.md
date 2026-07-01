@@ -11,3 +11,5 @@
 <img src="https://i.imgur.com/ONVtiJk.png">
 * find selector via mode - dev browser : <br/>
 <img src="https://i.imgur.com/4eU5EQK.png">
+* for iteration - log text of each element : <br/>
+<img src="https://i.imgur.com/IoHJirO.png">
