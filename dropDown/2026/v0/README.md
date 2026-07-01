@@ -13,3 +13,5 @@
 <img src="https://i.imgur.com/4eU5EQK.png">
 * for iteration - log text of each element : <br/>
 <img src="https://i.imgur.com/IoHJirO.png">
+* if from for iteration to selected : <br/>
+<img src="https://i.imgur.com/UDZgoiH.png">
