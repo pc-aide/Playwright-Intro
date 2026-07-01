@@ -8,3 +8,5 @@
 
 ## chaining locators
 <img src="https://i.imgur.com/PwiuiVt.png">
+* fill : <br/>
+<img src="https://i.imgur.com/6h17QyS.png">
