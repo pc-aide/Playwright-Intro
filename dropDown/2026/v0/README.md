@@ -7,3 +7,5 @@
 <img src="https://i.imgur.com/MZwzaRw.png">
 * index : <br/>
 <img src="https://i.imgur.com/ApiDKrI.png">
+* log length : <br/>
+<img src="https://i.imgur.com/ONVtiJk.png">
