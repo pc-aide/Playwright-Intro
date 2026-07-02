@@ -8,3 +8,5 @@
 <img src="https://i.imgur.com/VBpghea.png">
 * shifting content : <br/>
 <img src="https://i.imgur.com/jiLkZAW.png">
+* double click : <br/>
+<img src="https://i.imgur.com/0UDOAOI.png">
