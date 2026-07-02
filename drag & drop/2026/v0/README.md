@@ -3,4 +3,6 @@
 ## jqueryUi.com
 <img src="https://i.imgur.com/5jIYrI7.png"> <br/>
 * dragTo : <br/>
-<img src="https://i.imgur.com/qoUQ57y.png">
+<img src="https://i.imgur.com/qoUQ57y.png"> <br/>
+* multiple commands : <br/>
+<img src="https://i.imgur.com/jidVbHZ.png">
