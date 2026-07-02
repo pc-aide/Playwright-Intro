@@ -10,3 +10,6 @@
 <img src="https://i.imgur.com/czgJlzv.png">
 <br/>
 <img src="https://i.imgur.com/FraFzk3.png">
+
+## shift click
+<img src="https://i.imgur.com/dXNNEp2.png">
