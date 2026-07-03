@@ -8,4 +8,6 @@
 * setInputFiles : <br/>
 <img src="https://i.imgur.com/0AuQbdZ.png"> <br/>
 * many files upload : <br/>
-<img src="https://i.imgur.com/SZWPJbb.png">
+<img src="https://i.imgur.com/SZWPJbb.png"> <br/>
+* deSelect files : <br/>
+<img src="https://i.imgur.com/FZd11nz.jpeg">
