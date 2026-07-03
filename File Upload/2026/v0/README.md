@@ -6,4 +6,6 @@
 ## davidWalsh.name
 <img src="https://i.imgur.com/S1BfEUS.jpeg"> <br/>
 * setInputFiles : <br/>
-<img src="https://i.imgur.com/0AuQbdZ.png">
+<img src="https://i.imgur.com/0AuQbdZ.png"> <br/>
+* many files upload : <br/>
+<img src="https://i.imgur.com/SZWPJbb.png">
