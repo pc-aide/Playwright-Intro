@@ -10,4 +10,6 @@
 * many files upload : <br/>
 <img src="https://i.imgur.com/SZWPJbb.png"> <br/>
 * deSelect files : <br/>
-<img src="https://i.imgur.com/FZd11nz.jpeg">
+<img src="https://i.imgur.com/FZd11nz.jpeg"> <br/>
+* buffer memory : <br/>
+<img src="https://i.imgur.com/kaf7Ogh.png">
