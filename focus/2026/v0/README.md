@@ -11,3 +11,4 @@
 
 * accept cookies :
 <img src="https://i.imgur.com/mCJOxbh.png">
+<igm src="https://i.imgur.com/CwoF3Xx.png">
