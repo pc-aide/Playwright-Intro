@@ -5,3 +5,6 @@
 
 * check
 <img src="https://i.imgur.com/zEMfK1b.png">
+
+* setDefaultTimeout
+<img src="https://i.imgur.com/flXFrPa.png">
