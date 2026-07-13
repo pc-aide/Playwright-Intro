@@ -7,3 +7,7 @@
 
 * form :
 <img src="https://i.imgur.com/L9BSUwr.png">
+
+
+* accept cookies :
+<img src="https://i.imgur.com/mCJOxbh.png">
