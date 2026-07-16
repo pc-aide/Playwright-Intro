@@ -8,3 +8,6 @@ npx playwright test
 
 * cfg :
 <img src="https://i.imgur.com/Ae2wT5S.png">
+
+* run :
+<img src="https://i.imgur.com/aRwPqOK.png">
