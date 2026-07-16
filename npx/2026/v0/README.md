@@ -32,4 +32,4 @@ npx playwright test
 | 16 | Run tests in headed mode | `npx playwright test --headed` | `npx playwright test --headed` |
 | 17 | Run tests in debug mode | `npx playwright test --debug` | `npx playwright test --debug` |
 | 18 | Use environment variables | `ENV_VAR=value npx playwright test` | `BASE_URL=https://dev.site.com npx playwright test` |
----
+````
