@@ -2,7 +2,7 @@
 
 # 3 type of comments
 1. single line : `// <comment`
-multi-line : `//** <comment */`
-hashbank : `#!`
+2. multi-line : `//** <comment */`
+3. hashbank : `#!`
 
 <img src="https://i.imgur.com/2FNjq5S.png">
