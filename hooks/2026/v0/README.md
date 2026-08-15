@@ -7,3 +7,8 @@
 * code :
 
 <img src="https://i.imgur.com/HCpjWN0.png">
+
+## afterEach - log out
+* code :
+
+<img src="https://i.imgur.com/4Wsswks.png">
