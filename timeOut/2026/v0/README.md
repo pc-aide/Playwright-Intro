@@ -23,3 +23,13 @@
 * err :
 
 <img src="https://i.imgur.com/siobHzZ.png">
+
+## setTimeOut
+* code :
+
+<img src="https://i.imgur.com/s4rf3sG.png">
+
+
+* err :
+
+<img src="https://i.imgur.com/AfUewuz.png">
