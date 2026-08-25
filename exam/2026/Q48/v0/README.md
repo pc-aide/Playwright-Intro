@@ -579,3 +579,132 @@ The `exact: true` option makes the accessible name match exactly. `strict`, `who
 </details>
 
 ## 41
+To wait until the page navigates to a specific URL after an action, use:
+
+1. `page.waitForURL('**/dashboard')`
+2. `page.waitForNavigation('**/dashboard')`
+3. `page.waitForPage('**/dashboard')`
+4. `page.expectURL('**/dashboard')`
+
+details>
+<summary>Answer</summary>
+
+`page.waitForURL('**/dashboard')`
+
+page.waitForURL() waits for the page to reach a URL matching a string glob, RegExp, or predicate. waitForNavigation is older/lower-level and generally discouraged; the others are invalid.
+</details>
+
+## 42
+Which command double-clicks an element?
+
+1. `locator.dblclick()`
+2. `locator.doubleClick()`
+3. `locator.click({ times: 2 })`
+4. `locator.click2()`
+
+details>
+<summary>Answer</summary>
+
+`locator.dblclick()`
+
+locator.dblclick() performs a double click. doubleClick, click({times:2}), and click2 are not valid.
+</details>
+
+## 43
+What does the storageState option capture?
+
+1. `Cookies and local/session storage for reuse (e.g., auth)`
+2. `Only the screenshot of the page`
+3. `The browser version`
+4. `Network HAR logs`
+
+details>
+<summary>Answer</summary>
+
+`Cookies and local/session storage for reuse (e.g., auth)`
+
+storageState saves cookies and origin storage so you can persist a logged-in session and reuse it across tests via newContext({ storageState }) or test.use(). It is unrelated to screenshots, versions, or HAR.
+</details>
+
+## 44
+Which assertion negates a matcher to confirm an element is NOT visible?
+
+1. `await expect(locator).not.toBeVisible()`
+2. `await expect(locator).toBeInvisible()`
+3. `await expect(locator).toBeHidden().not()`
+4. `await expect.not(locator).toBeVisible()`
+
+details>
+<summary>Answer</summary>
+
+`await expect(locator).not.toBeVisible()`
+
+Prefix the matcher with .not, e.g., expect(locator).not.toBeVisible(). There is also a separate toBeHidden() matcher. toBeInvisible and the other forms are invalid.
+</details>
+
+## 45
+Which method returns the rendered, visible text of an element?
+
+1. `locator.innerText()`
+2. `locator.textContent()`
+3. `locator.innerHTML()`
+4. `locator.getText()`
+
+details>
+<summary>Answer</summary>
+
+`locator.innerText()`
+
+innerText() returns the visible, rendered text (respecting CSS), whereas textContent() returns all text including hidden nodes. getText is not a method.
+</details>
+
+## 46
+In playwright.config, where are different browsers (chromium, firefox, webkit) usually defined?
+
+1. `In the projects array`
+2. `In the browsers array`
+3. `In the use.engines list`
+4. `In the targets array`
+
+details>
+<summary>Answer</summary>
+
+`In the projects array`
+
+Each browser is defined as a project in the projects array, often using devices presets. browsers, use.engines, and targets are not config keys for this.
+</details>
+
+## 47
+Which command takes a screenshot of the page?
+
+1. `page.screenshot({ path: 'shot.png' })`
+2. `page.capture({ path: 'shot.png' })`
+3. `page.snapshot({ path: 'shot.png' })`
+4. `page.image({ path: 'shot.png' })`
+
+details>
+<summary>Answer</summary>
+
+`page.screenshot({ path: 'shot.png' })`
+
+page.screenshot() captures the viewport (or full page with fullPage: true). capture, snapshot, and image are not Page methods for this purpose.
+</details>
+
+## 48
+Which locator method scopes results to the first matching element?
+
+1. `locator.first()`
+2. `locator.head()`
+3. `locator.initial()`
+4. `locator.one()`
+
+details>
+<summary>Answer</summary>
+
+`locator.first()`
+
+locator.first() returns the first matched element; there is also last() and nth(). head, initial, and one are not methods.
+</details>
+
+## scores
+1. 25 aug 2026 - 41/48 - 85%
