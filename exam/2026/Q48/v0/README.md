@@ -299,3 +299,27 @@ Which assertion checks that a checkbox is currently checked?
 <details><summary>Answer</summary>await expect(locator).toBeChecked()<br/><br/>toBeChecked() is the web-first assertion for checkbox/radio state. isChecked() is a one-shot boolean getter, not an assertion; the others are invalid.</details>
 
 ## 38
+What does page.goBack() do?
+1. What does page.goBack() do?
+2. Reloads the page
+3. Closes the current tab
+4. Clears form state
+<details><summary>Answer</summary>Navigates to the previous page in history<br/><br/>page.goBack() navigates back in the session history, like the browser back button. Reloading is reload(); it does not close tabs or clear forms.</details>
+
+## 39
+Which method clears the contents of an input field?
+1. locator.clear()
+2. locator.empty()
+3. locator.reset()
+4. locator.erase()
+<details><summary>Answer</summary>locator.clear()<br/><br/>locator.clear() clears the input. You can also call fill('') . empty, reset, and erase are not Locator methods.</details>
+
+## 40
+Which getByRole option restricts matching to an exact accessible name?
+1. { name: 'Submit', exact: true }
+2. { name: 'Submit', strict: true }
+3. { name: 'Submit', whole: true }
+4. { name: 'Submit', full: true }
+<details><summary>Answer</summary>{ name: 'Submit', exact: true }<br/><br/>The exact: true option makes the name match case-sensitive and whole-string. strict, whole, and full are not valid options here.</details>
+
+## 41
