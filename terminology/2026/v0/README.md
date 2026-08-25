@@ -1,4 +1,4 @@
 # terminology
 
-## Network har logs
+## Network <ins>har</ins> logs
 * 
