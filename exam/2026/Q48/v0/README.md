@@ -194,3 +194,108 @@ What does page.reload() do?
 <details><summary>Answer</summary>Reloads the current page<br/><br/>page.reload() reloads the current page and returns the main resource response. Going back is page.goBack(); it does not clear cache or restart the browser.</details>
 
 ## 25
+Which keyboard method presses a single key or key combination on a focused element?
+1. locator.press('Enter')
+2. locator.key('Enter')
+3. locator.sendKey('Enfer')
+4. locator.hitKey('Enter')
+<details><summary>Answer</summary>locator.press('Enter')<br/><br/>locator.press() accepts a key name or combination like 'Control+A'. key, sendKey, and hitKey are not Playwright methods.</details>
+
+## 26
+Which assertion checks an input's current value?
+1. await expect(locator).toHaveValue('john@x.com')
+2. await expect(locator).toHaveText('john@x.com')
+3. await expect(locator).toContainValue('john@x.com')
+4. await expect(locator).toBeValue('john@x.com')
+<details><summary>Answer</summary>await expect(locator).toHaveValue('john@x.com')<br/><br/>toHaveValue asserts the value of an input/textarea/select. toHaveText is for visible text content; toContainValue and toBeValue are not matchers.</details>
+
+## 27
+What is the default file name for Playwright's configuration?
+1. playwright.config.ts (or .js)
+2. pw.config.ts
+3. playwright.json
+4. test.config.ts
+<details><summary>Answer</summary>playwright.config.ts (or .js)<br/><br/>Playwright reads playwright.config.ts/js by default. The config defines projects, the use block, reporters, retries, and more. The other names are not the default.</details>
+
+## 28
+Which hook runs before each test in a describe block?
+1. test.beforeEach()
+2. test.setup()
+3. test.BeforeAll() only
+4. test.init()
+<details><summary>Answer</summary>test.beforeEach()<br/><br/>test.beforeEach() runs before every test. test.beforeAll() runs once before all tests in the group. setup and init are not hooks.</details>
+
+## 29
+Which method retrieves the value of an element's HTML attribute, such as href?
+1. locator.getAttribute('href')
+2. locator.attr('href')
+3. locator.attribute('href')
+4. locator.pop('href')
+<details><summary>Answer</summary>locator.getAttribute('href')<br/><br/>getAttribute(name) returns the attribute value (or null). attr, attribute, and prop are not Locator methods.</details>
+
+## 30
+How do you run all tests with the Playwright Test runner?
+1. npx playwright test
+2. npx playwright run
+3. npx playwright start
+4. npx playwright exec
+<details><summary>Answer</summary>npx playwright test<br/><br/>npx playwright test discovers and runs your tests. run, start, and exec are not valid runner commands.</details>
+
+## 31
+Which locator targets an element by placeholder text 'Search products'?
+1. page.getByPlaceholder('Search products')
+2. page.getByText('Search products')
+3. page.getByLabel('Search products')
+4. page.getByHint('Search products')
+<details><summary>Answer</summary>page.getByPlaceholder('Search products')<br/><br/>getByPlaceholder matches the placeholder attribute of an input. getByText/getByLabel target different things, and getByHint does not exist.</details>
+
+## 32
+Which assertion verifies the page title?
+1. await expect(page).toHaveTitle('Dashboard')
+2. await expect(page).toHaveText('Dashboard')
+3. await expect(page.title()).toHaveTitle('Dashboard')
+4. await expect(page).titles('Dashboard')
+<details><summary>Answer</summary>await expect(page).toHaveTitle('Dashboard')<br/><br/>expect(page).toHaveTitle() asserts the document title and accepts a string or RegExp. The others are not valid forms.
+</details>
+
+## 33
+What does locator.hover() do?
+1. moves the mouse over the element
+2. Clicks & holds the element
+3. Scrolls to the element only
+4. Focuses the element via keyboard
+<details><summary>Answer</summary>Moves the mouse over the element<br/><br/>hover() moves the mouse over the element after auto-waiting for actionability, useful for revealing tooltips or menus. It does not click, and focusing is done with focus().</details>
+
+## 34
+Which option makes the browser visible (non-headless) when launching?
+1. { headless: false }
+2. { visible: true }
+3. { gui: true }
+4. { headed: 'on' }
+<details><summary>Answer</summary>{ headless: false }<br/><br/>Passing { headless: false } to launch() shows the browser UI. From the test runner you can also use the --headed flag. visible, gui, and headed:'on' are not valid launch options.</details>
+
+## 35
+Which method returns the number of elements a locator matches?
+1. locator.count()
+2. locator.lenght()
+3. locator.size()
+4. locator.total()
+<details><summary>Answer</summary>locator.count()<br/><br/>locator.count() returns a Promise resolving to the number of matched elements. length, size, and total are not Locator methods.</details>
+
+## 36
+To group related tests together, you use:
+1. test.describe('group', ()=> {...})
+2. test.group('group', () => {...})
+3. test.suite('group', () => {...})
+4. describe.test('group', () => {...})
+<details><summary>Answer</summary>test.describe('group', () => { ... })<br/><br/>test.describe() declares a group of tests, enabling shared hooks and organization. group, suite, and describe.test are not part of the API.</details>
+
+## 37
+Which assertion checks that a checkbox is currently checked?
+1. await expect(locator).toBeChecked()
+2. await expect(locator).toBeSelected()
+3. await expect(locator).toBeTrue()
+4. await expect(loctor).isChecked()
+<details><summary>Answer</summary>await expect(locator).toBeChecked()<br/><br/>toBeChecked() is the web-first assertion for checkbox/radio state. isChecked() is a one-shot boolean getter, not an assertion; the others are invalid.</details>
+
+## 38
