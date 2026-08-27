@@ -86,7 +86,7 @@ Structure attendue :
 - Les tests API vivent dans `tests/<domaine>/api/` et les parcours UI dans `tests/<domaine>/ui/` lorsque les deux types de tests coexistent.
 - Un scénario end-to-end peut combiner un client API et des Page Objects, mais chaque couche doit rester responsable de son propre comportement.
 
-Structure recommandée pour un domaine :
+Structure recommandée :
 
 ```text
 .
