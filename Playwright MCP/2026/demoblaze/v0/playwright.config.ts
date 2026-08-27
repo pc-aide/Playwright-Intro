@@ -1,4 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
+import { getAuthStatePath } from './auth-state';
+
+const AUTH_FILE = getAuthStatePath();
 
 export default defineConfig({
   testDir: './tests',
@@ -16,8 +19,14 @@ export default defineConfig({
   },
   projects: [
     {
+      name: 'setup',
+      testMatch: /.*\.setup\.ts/,
+    },
+    {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      dependencies: ['setup'],
+      testIgnore: /.*\.setup\.ts/,
+      use: { ...devices['Desktop Chrome'], storageState: AUTH_FILE },
     },
   ],
 });

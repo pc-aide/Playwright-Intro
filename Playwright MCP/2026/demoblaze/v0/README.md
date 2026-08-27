@@ -56,7 +56,9 @@ La configuration du projet utilise uniquement Chromium. L'installation de `chrom
 │   └── product.page.ts          # Ajout d'un produit au panier
 ├── tests/
 │   └── demoblaze/
+│       ├── auth.setup.ts             # Création de l'état d'authentification
 │       └── login-add-cart-logout.spec.ts # Scénario end-to-end principal
+├── auth-state.ts                 # Calcul du chemin de l'état d'authentification
 ├── playwright.config.ts         # Configuration Playwright
 ├── reporter.ts                  # Personnalisation du rapport HTML
 ├── tsconfig.json                # Configuration du contrôle de types TypeScript
@@ -65,6 +67,24 @@ La configuration du projet utilise uniquement Chromium. L'installation de `chrom
 ├── playwright-report/            # Rapport HTML et fichiers générés par Playwright
 └── test-results/                 # Traces, vidéos et pièces jointes des tests
 ```
+
+### Gestion de l'authentification
+
+Le fichier [auth-state.ts](auth-state.ts) centralise le calcul du chemin utilisé
+pour sauvegarder et relire l'état d'authentification Playwright. Il utilise
+`BASE_URL` et extrait son domaine pour produire un fichier spécifique, par
+exemple `playwright/.auth/demoblaze.com.json`.
+
+Le projet `setup`, défini dans [auth.setup.ts](tests/demoblaze/auth.setup.ts),
+se connecte puis sauvegarde les cookies et les données du navigateur dans ce
+fichier. Le projet Chromium, configuré dans
+[playwright.config.ts](playwright.config.ts), dépend de ce setup et réutilise
+ensuite l'état avec `storageState` pour démarrer directement connecté. Chaque
+domaine possède ainsi son propre état de session.
+
+Les fichiers générés dans `playwright/.auth/` peuvent contenir des informations
+de session et sont donc exclus du dépôt avec `.gitignore`, au même titre que
+`test-results/` et `playwright-report/`.
 
 ### Organisation POM
 
@@ -135,7 +155,17 @@ Après l'exécution des tests, ouvrir le rapport HTML avec :
 npx playwright show-report
 ```
 
-Le rapport contient les résultats, les screenshots attachés par le test, les traces et les vidéos disponibles pour chaque exécution.
+Le rapport HTML centralise toutes les informations de chaque exécution :
+
+- le statut et les résultats des tests ;
+- les screenshots générés, notamment en cas d'échec ;
+- les vidéos de chaque test ;
+- les traces Playwright détaillées ;
+- les pièces jointes et les messages d'erreur associés.
+
+Depuis le rapport, il est possible d'ouvrir les screenshots et les vidéos, puis
+de consulter la trace complète d'un test pour analyser les étapes, les actions
+et l'état du navigateur.
 
 Pour ouvrir directement la trace d'un test, utiliser :
 

@@ -1,10 +1,11 @@
 import { test } from '@playwright/test';
 import { HomePage } from '../../POM/home.page';
 import { LoginPage } from '../../POM/login.page';
+import { getAuthStatePath } from '../../auth-state';
 
-const USERNAME = 'testv27aug2026';
-const PASSWORD = 'password';
 const PRODUCT_NAME = 'Samsung galaxy s6';
+
+test.use({ storageState: getAuthStatePath() });
 
 test.describe('DemoBlaze - Shopping journey', () => {
   test('logs in, adds a product to the cart, and logs out', async ({ page }, testInfo) => {
@@ -12,8 +13,6 @@ test.describe('DemoBlaze - Shopping journey', () => {
     const homePage = new HomePage(page);
 
     await page.goto('/index.html');
-    await loginPage.open();
-    await loginPage.loginAs(USERNAME, PASSWORD);
     await homePage.expectLoggedIn();
     const loginScreenshot = testInfo.outputPath('login.png');
     await page.screenshot({ path: loginScreenshot, fullPage: true });
