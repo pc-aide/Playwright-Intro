@@ -282,3 +282,5 @@ DEMOBLAZE_USERNAME=mon-utilisateur DEMOBLAZE_PASSWORD=mon-mot-de-passe npx playw
 ```
 
 Les variables ne seront prises en compte qu'après adaptation du test pour les lire avec `process.env`.
+
+## gif
