@@ -12,4 +12,9 @@
 npm i -D @playwright/test allure-playwright
 
 npm i -D allure-commandline
+
+allure generate allure-results --clean -o allure-report
+
+# Open the generated report in a browser
+allure open allure-report
 ````
