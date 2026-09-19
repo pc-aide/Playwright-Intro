@@ -14,3 +14,6 @@
 
 * GHA ?
 <img src="https://i.imgur.com/a31I6Bd.png">
+
+* generated files
+<img src="https://i.imgur.com/KQMOAgu.png">
