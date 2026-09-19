@@ -17,3 +17,6 @@
 
 * generated files
 <img src="https://i.imgur.com/KQMOAgu.png">
+
+* install the mcp srv in prompt
+<img src="https://i.imgur.com/YmxrzSW.png">
