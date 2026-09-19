@@ -8,3 +8,6 @@
 
 ## checkUp
 <img src="https://i.imgur.com/2187zbx.png">
+
+## test our ai mcp srv
+<img src="https://i.imgur.com/Gxd2C5z.png">
