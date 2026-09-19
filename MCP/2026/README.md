@@ -11,3 +11,9 @@
 
 ## test our ai mcp srv
 <img src="https://i.imgur.com/Gxd2C5z.png">
+
+--
+
+## benefits
+* token efficiency
+<img src="https://i.imgur.com/sCYmH3X.png">
