@@ -20,3 +20,6 @@
 
 * install the mcp srv in prompt
 <img src="https://i.imgur.com/YmxrzSW.png">
+
+* dot mcp json file
+<img src="https://i.imgur.com/cF3IQAH.png">
