@@ -26,3 +26,32 @@
 
 * claude terminal
 <img src="https://i.imgur.com/4K1nLjr.png">
+
+** claude code
+<img src="https://i.imgur.com/cGteEGU.png">
+
+* mcp
+<img src="https://i.imgur.com/vKBZPXF.png">
+
+* mcp tools
+<img src="https://i.imgur.com/DOBzDaX.png">
+
+* new agent
+<img src="https://i.imgur.com/pNRhGHM.png">
+
+* agents folder
+<img src="https://i.imgur.com/Sj9IDXQ.png">
+
+* prompt for new agent
+<img src="https://i.imgur.com/4IlXU1B.png">
+
+* model
+<img src="https://i.imgur.com/s3OPUD6.png">
+
+* agent memory
+<img src="https://i.imgur.com/4y8dw43.png">
+
+* playwright-qa-automation.md
+<img src="https://i.imgur.com/Rloi0yW.jpeg">
+
+* 
