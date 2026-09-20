@@ -23,3 +23,6 @@
 
 * dot mcp json file
 <img src="https://i.imgur.com/cF3IQAH.png">
+
+* claude terminal
+<img src="https://i.imgur.com/4K1nLjr.png">
