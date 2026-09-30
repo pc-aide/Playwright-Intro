@@ -54,4 +54,5 @@
 * playwright-qa-automation.md
 <img src="https://i.imgur.com/Rloi0yW.jpeg">
 
-* 
+* prompt & credit token cost
+<img src="https://i.imgur.com/tQd1Axa.png">
