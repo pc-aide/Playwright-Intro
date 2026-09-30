@@ -57,6 +57,10 @@
 * prompt & credit token cost
 <img src="https://i.imgur.com/tQd1Axa.png">
 
+* launch our tests cases
+
+<img src="https://i.imgur.com/8Jg966u.png">
+
 * rapport for 15 tests case
 
 <img src="https://i.imgur.com/ijVPdGR.jpeg">
