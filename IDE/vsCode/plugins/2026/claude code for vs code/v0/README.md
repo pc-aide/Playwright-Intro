@@ -57,6 +57,10 @@
 * prompt & credit token cost
 <img src="https://i.imgur.com/tQd1Axa.png">
 
+* page folder AND spec folder
+
+<img src="https://i.imgur.com/aHcCmwF.png">
+
 * launch our tests cases
 
 <img src="https://i.imgur.com/8Jg966u.png">
