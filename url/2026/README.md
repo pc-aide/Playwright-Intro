@@ -21,3 +21,7 @@
 ## https://www.automationexercise.com/
 
 <img src="https://i.imgur.com/ULludDs.png">
+
+* list
+
+<img src="https://i.imgur.com/nEjGkL2.png">
