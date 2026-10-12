@@ -71,3 +71,6 @@
 
 ## multi agents
 <img src="https://i.imgur.com/FFpXa87.png">
+
+* build a team - each agent for a role
+<img src="https://i.imgur.com/Z0cLRfJ.png">
