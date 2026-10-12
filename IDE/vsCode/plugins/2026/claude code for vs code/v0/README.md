@@ -77,3 +77,15 @@
 
 * why multi agents
 <img src="https://i.imgur.com/iOd78j5.png">
+
+* BA (Business Analyst) agent (1/4)
+<img src="https://i.imgur.com/zQH8bXP.png">
+
+* code review agent (2/4)
+<img src="https://i.imgur.com/HQX1tFF.png">
+
+* pwt qa automation agent (3/4)
+<img src="https://i.imgur.com/Xvn7DPO.png">
+
+* orchestrator agent
+<img src="https://i.imgur.com/0pD0hR7.png">
