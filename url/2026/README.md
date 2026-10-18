@@ -25,3 +25,27 @@
 * list
 
 <img src="https://i.imgur.com/nEjGkL2.png">
+
+## skills.sh
+
+<img src="https://i.imgur.com/1000vFg.png">
+
+* npx ... skills
+
+<img src="https://i.imgur.com/rpEqJ6A.png">
+
+* business analyst 
+
+<img src="https://i.imgur.com/svFuZl9.png">
+
+* playwright qa
+
+<img src="https://i.imgur.com/nN8unxJ.png">
+
+* code review
+
+<img src="https://i.imgur.com/R5jL1JA.png">
+
+* code review in vsCode
+
+<img src="https://i.imgur.com/REmi7Oc.png">
