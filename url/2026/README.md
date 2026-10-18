@@ -49,3 +49,11 @@
 * code review in vsCode
 
 <img src="https://i.imgur.com/REmi7Oc.png">
+
+* multi ai agent with prompt claude
+
+<img src="https://i.imgur.com/yLCs8NX.png">
+
+* multi agent AI in vsCode
+
+<img src="https://i.imgur.com/Ky0OFB7.png">
